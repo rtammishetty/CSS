@@ -1,51 +1,41 @@
 ﻿body {
-  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 1.45;
+  @include font-source($font-family-base, 14px, '', '', 1.45);
 }
 
 .container-fluid__brand {
+  @include font-source('', 20px, $color-gray, 200, '');
   display: block;
   float: left;
   padding: 10px 20px 10px;
   margin-left: -20px;
-  font-size: 20px;
-  font-weight: 200;
-  color: #777;
   text-shadow: 0 1px 0 #fff;
 }
 
 .span6__input {
-  font-size: 14px;
-  color: #666;
+  @include calculate-font(1);
+  color: $color-gray-dark;
 }
 
-.demo__label {
-  line-height: 26px;
-  color: #000;
+.demo__label, {
+  @include calculate-line-height('', 26px);
+  color: $color-black;
   margin-bottom: 25px;
 }
 
 .demo__field {
-  line-height: 26px;
-  color: #000;
+  @include calculate-line-height('', 26px);
+  color: $color-black;
 }
 
 .demo__label--name {
-  line-height: 26px;
-  color: #000;
-  font-size: 14px;
+  @include font-source($font-family-base, 14px, $color-black, '', 26px);
   line-height: 1.45;
-  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .demo__field--input {
-  line-height: 26px;
-  color: #000;
-  font-size: 16px;
-  box-shadow: 0px 1px 1px !important;
-  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  border: 1px solid #ddd;
+  @include font-source($font-family-base, 16px, $color-black, '', 26px);
+  box-shadow: 0 1px 1px !important;
+  border: 1px solid $color-gray-light;
 }
 
 ul#tabs__custom {
@@ -56,18 +46,18 @@ ul#tabs__custom {
 
 ul#tabs__custom li {
   display: inline-block;
-  background-color: #09c;
+  background-color: $color-blue;
   padding: 15px 45px;
-  color: #fff;
+  color: $color-white;
   cursor: pointer;
 }
 
 ul#tabs__custom li:hover {
-  background-color: #006699;
+  background-color: $color-blue-dark;
 }
 
 ul#tabs__custom li.active {
-  background-color: #006699;
+  background-color: $color-blue-dark;
 }
 
 ul#tabs__custom--links {
@@ -106,23 +96,20 @@ ul#tabs__custom--links li.active {
 }
 
 .tabbable.custom-tabs>.nav-tabs>a {
-  background-color: #49a5d5;
-  color: #fff;
+  background-color: $color-blue-light;
+  color: $color-white;
   padding: 20px 45px;
 }
 
 .layout-wrapper {
-  background: #fff;
+  @include size(100%, 100%);
+  background: $color-white;
   display: block;
-  font-size: 13px;
-  height: 100%;
-  width: 100%;
+  font-size: $font-size-base;
 }
 
 .banner-heading {
-  font-size: 64px;
-  font-weight: 200;
-  line-height: 1.6;
+  @include font-source('', 34px, '', 200, 1.6);
   text-align: center;
 }
 
@@ -143,15 +130,19 @@ h4 {
   padding-bottom: 10px;
 }
 
-/* Css for Div hide and show */
+img {
+  @include size(90px, 90px);
+  float: right;
+}
 
+
+/* Css for Div hide and show */
 .div-hide-ui {
+  @include font-source('', 16px, '', '', 22px);
   background: #fff;
   border: 1px solid #5bc0de;
   border-radius: 6px;
   box-shadow: 1px 1px 6px;
-  font-size: 16px;
-  line-height: 22px;
   padding: 8px;
 }
 
@@ -159,9 +150,9 @@ h4 {
 .main--profesional {
   border-radius: .5em;
   box-sizing: border-box;
-  color: #000;
+  color: $color-black;
   display: block;
   margin: 1em auto;
-  padding: 1em 0em;
+  padding: 1em 0;
   width: 100%;
 }

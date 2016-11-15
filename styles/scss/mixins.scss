@@ -1,0 +1,44 @@
+@mixin calculate-font($font-size, $font-weight:'') {
+  font-size: (($font-size-base) + ( $font-size));
+  @if $font-weight != '' {
+    font-weight: ($font-weight);
+  }
+}
+
+//If line-height is not specified then by default it will be same as that of Font-Size
+@mixin calculate-line-height($font-size, $line-height:'') {
+  @if $line-height != '' {
+    line-height: ($line-height);
+  }  @else {
+    line-height: ($font-size);
+  }
+}
+
+@mixin font-source($family:'', $size:'', $colour: '', $weight: '', $lh: '') {
+  // font-family: $font-family-base;
+
+  @if $family != '' {
+    font-family: $family;
+  }
+
+  @if $size != '' {
+    font-size: $size;
+  }
+
+  @if $colour != ''{
+    color: $colour;
+  }
+
+  @if $weight != '' {
+    font-weight: $weight;
+  }
+
+  @if $lh != '' {
+    line-height: $lh;
+  }
+}
+
+@mixin size($height: '', $width:'') {
+  height: $height;
+  width: $width;
+}
